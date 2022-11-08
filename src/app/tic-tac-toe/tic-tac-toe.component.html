@@ -1,0 +1,13 @@
+<div class="main-container">
+  <h1>Tic-Tac-Toe</h1>
+  <p *ngIf="!winner">Current player: {{ currentPlayer }}</p>
+  <p *ngIf="winner">Winner: {{ winner }}</p>
+  <table>
+    <tr *ngFor="let row of [0, 1, 2]">
+      <td *ngFor="let col of [0, 1, 2]" (click)="processTurn(row, col)">
+        {{ board[row][col] }}
+      </td>
+    </tr>
+  </table>
+  <p><button (click)="reset()">Restart Match</button></p>
+</div>
